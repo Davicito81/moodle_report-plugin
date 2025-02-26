@@ -58,8 +58,8 @@ Bevor Sie beginnen, stellen Sie sicher, dass folgende Software auf Ihrem System 
    Hinweis für die lokale Verwendung der Rest-API 
    - Zum Ausführen von Moodel, muss die PHP-8.1+ vorhanden werden und
    - die notwendige PHP-Extension: cli, mbstring, xml, curl, mysql, gd, zim, sodium, soap, intl
-   - Fals notwendif muss der PHPMailer via Composer hinzugefügt werden, da der Mailversand damit
-     umgesetzt wurde.
+   - Falls notwendig, muss der PHPMailer via Composer hinzugefügt werden, da der E-Mail-Versand für, die Repots, damit
+     umgesetzt wird.
      ```bash
      composer require phpmailer/phpmailer   
      ```
