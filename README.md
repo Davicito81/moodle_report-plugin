@@ -4,45 +4,85 @@
   <img src="https://raw.githubusercontent.com/moodle/moodle/main/.github/moodlelogo.svg" alt="The Moodle Logo">
 </a></p>
 
-[Moodle][1] is the World's Open Source Learning Platform, widely used around the world by countless universities, schools, companies, and all manner of organisations and individuals.
+[Moodle]# 📊 Moodle Report Plugin
 
-Moodle is designed to allow educators, administrators and learners to create personalised learning environments with a single robust, secure and integrated system.
+## 📖 **Überblick**
+Dieses Repository enthält ein **Moodle-Report-Plugin**, das zur Erfüllung einer **Testaufgabe** entwickelt wurde.  
+Das Plugin analysiert und generiert Berichte über das Nutzerverhalten und Aktivitäten innerhalb von Moodle-Kursen.
 
-## Documentation
+🔍 **Zweck des Plugins:**
+1. **Erfassen und Anzeigen relevanter Nutzungsdaten** für Administratoren.
+2. **Automatisierte Generierung von Berichten**, basierend auf Kursaktivitäten.
+3. **Sichere Speicherung von Konfigurationsdaten**, u.a. für SMTP-Zugangsdaten.
+4. **Optimierte Darstellung von Kurs-, Quiz- und Forenaktivitäten**.
 
-- Read our [User documentation][3]
-- Discover our [developer documentation][5]
-- Take a look at our [demo site][4]
+---
 
-## Community
+# Anleitung zur Einrichtung und Nutzung des Moodle Report-Plugins
 
-[moodle.org][1] is the central hub for the Moodle Community, with spaces for educators, administrators and developers to meet and work together.
+Diese Anleitung bietet eine schrittweise Erklärung zur Einrichtung und Nutzung des Report-Plugins.
+Sie ist für Anwender konzipiert, die die Anwendung zum ersten Mal aufsetzen.
 
-You may also be interested in:
+## Voraussetzungen
 
-- attending a [Moodle Moot][6]
-- our regular series of [developer meetings][7]
-- the [Moodle User Association][8]
+Bevor Sie beginnen, stellen Sie sicher, dass folgende Software auf Ihrem System installiert ist:
 
-## Installation and hosting
+- **PHP 8.2+**
+- **MariaDB**: (v.10.6.7+)
+- **Composer** 
+  
+## Projekt herunterladen
 
-Moodle is Free, and Open Source software. You can easily [download Moodle][9] and run it on your own web server, however you may prefer to work with one of our experienced [Moodle Partners][10].
+1. **Klonen Sie das Repository**:
+   Öffnen Sie ein Terminal oder eine Eingabeaufforderung und führen Sie folgenden Befehl aus:
 
-Moodle also offers hosting through both [MoodleCloud][11], and our [partner network][10].
+   ```bash
+   git clone https://github.com/Davicito81/moodle_report-plugin.git
+   cd moodle_report-plugin
+   ```
+   Falls Git nicht installiert ist, können Sie das Projekt auch als ZIP-Datei direkt von GitHub herunterladen:
 
-## License
+   Besuchen Sie https://github.com/Davicito81/moodle_report-plugin
+   Klicken Sie auf Code und dann auf Download ZIP
+   Entpacken Sie die ZIP-Datei und navigieren Sie in das Projektverzeichnis.
 
-Moodle is provided freely as open source software, under version 3 of the GNU General Public License. For more information on our license see
+## Projekt-Testumgebung herstellen 
+   Nach dem das Projekt heruntergeladen wurde, müssen wichtige Abhänigkeiten nachinstalliert werden.
+   Dazu füren Sie folgenden Befehl aus.
+   
+   ```bash
+   composer install
+   ```
 
-[1]: https://moodle.org
-[2]: https://moodle.com
-[3]: https://docs.moodle.org/
-[4]: https://sandbox.moodledemo.net/
-[5]: https://moodledev.io
-[6]: https://moodle.com/events/mootglobal/
-[7]: https://moodledev.io/general/community/meetings
-[8]: https://moodleassociation.org/
-[9]: https://download.moodle.org
-[10]: https://moodle.com/partners
-[11]: https://moodle.com/cloud
-[12]: https://moodledev.io/general/license
+   Hinweis für die lokale Verwendung der Rest-API 
+   - Zum Ausführen von Moodel, muss die PHP-8.1+ vorhanden werden und
+   - die notwendige PHP-Extension: cli, mbstring, xml, curl, mysql, gd, zim, sodium, soap, intl    
+
+
+
+## Moodle-Konfigurationsdatei anpassen
+Wichtige Sicherheitshinweise:
+
+Sensible Daten wie SMTP-Zugangsdaten dürfen nicht in config.php hinterlegt werden, sondern ausschließlich in .env.
+Keine Passwörter oder API-Keys direkt in den Code einfügen!
+- Dazu Liegt im Moodle-Rootverzeichnis eine ".env_config" di in in ".env" umbenannt werden muss
+- Darin enthalten müssen die Zuganmgsdaten für die Datenbank und für das SMPT-Konto hinterlegt werden, damit der E-Mail-Versant funktionieren kann! 
+  
+## Testdaten vorbereiten in Moodle hinterlegen, falls nicht vorhanden
+Damit das Plugin korrekt funktioniert, müssen Testkurse und Aktivitäten angelegt werden, darunter:
+
+📚 Kurse
+✍ Quizzes
+💬 Foren
+🎓 Lektionen
+Ohne diese Testdaten können keine sinnvollen Berichte erstellt werden!
+
+
+## Lizenz & Mitwirken
+Dieses Projekt wurde für eine Testaufgabe erstellt und ist nicht für den produktiven Einsatz vorgesehen.
+Für Rückfragen oder Verbesserungsvorschläge gerne ein Issue erstellen oder einen Pull Request senden.
+
+📌 Autor: David Izaguirre
+🛠 Entwickelt für Moodle Testumgebungen
+📅 Letztes Update: Februar 2025
+

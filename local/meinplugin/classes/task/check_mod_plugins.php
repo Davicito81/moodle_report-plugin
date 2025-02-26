@@ -154,7 +154,7 @@
                 /*$event = \local_meinplugin\event\report_sent::create([
                     'context' => \context_system::instance(),
                     'other' => ['email' => $recipientEmail]
-                ]);
+                ]);git
                 $event->trigger();*/
 
                 mtrace("✅ Roport successfully send by email!");
